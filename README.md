@@ -1,1 +1,1 @@
-# Draft B2B page to be placed on the general Bembi website
+Draft B2B page to be placed on the general Bembi website. Pictures should be uploaded to ftp with the folder structure preserved. Paste the html code with embedded css and js code from the main.html file into the appropriate place in the ‘news’
