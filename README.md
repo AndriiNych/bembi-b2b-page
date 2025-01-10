@@ -1,1 +1,1 @@
-# bembi-b2b-page
+# Draft B2B page to be placed on the general Bembi website

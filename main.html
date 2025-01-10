@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.href =
+        "https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500&display=swap";
+      document.head.appendChild(link);
+
+      const style = document.createElement("style");
+      style.innerHTML = `
+:root {
+  --first: #fcfcfc;
+  --second: #4b4a48;
+  --base: #fff;
+  --accent: #ff9e18;
+  --accent_hover: #ec8d0a;
+  --menu: #d9d9d9;
+  --catalogues: #7b7a77;
+  --fields: #dfdfdf;
+  --desktop: 1200px;
+  --tablet: 768px;
+  --mobile: 375px;
+  --boxshadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.footer.outher_footer {
+  margin-top: 0;
+}
+p.footer__p {
+  margin-bottom: 0;
+}
+.a-footer__item .a-footer__phone, 
+.a-footer__item .a-li  {
+  margin-bottom: 0;
+}
+.gobal_wrapper1 {
+  color: var(--second);
+  font-family: "Roboto", serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+}
+.gobal_wrapper1 ul li {
+  font-family: "Roboto", serif;
+  position: unset;
+  padding-left: 0;
+  list-style: none;
+}
+.gobal_wrapper1 ul li:before {
+width: 0;
+height: 0;
+}
+.a-body {
+  text-decoration: none;
+}
+.gobal_wrapper1 img {
+  display: block;
+}
+h1 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+.gobal_wrapper1 .a-h2 {
+  display: block;
+  width: 100%;
+  font-family: "Roboto", serif;
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 110%;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--catalogues)
+}
+.gobal_wrapper1 p {
+  font-family: "Roboto", serif ;
+}
+.gobal_wrapper1 .a-h3 {
+  display: block;
+  font-family: "Roboto", serif ;
+  padding-bottom: 40px;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 120%;
+  text-transform: uppercase;
+  text-align: left;
+}
+.gobal_wrapper1 .a-h4 {
+  display: block;
+  font-family: "Roboto", serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 120%;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--menu);
+}
+.accent {
+  color: var(--accent);
+}
+.gobal_wrapper1 {
+  margin: 0 auto;
+  @media screen and (min-width: 375px) {
+    width: var(--mobile);
+  }
+  @media screen and (min-width: 1200px) {
+    width: var(--desktop);
+  }
+}
+.hero {
+  position: relative;
+}
+.hero__logo {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  @media screen and (min-width: 1200px) {
+    top: 50%;
+    left: 0;
+    transform: translate(100px, -50%);
+  }
+}
+.gobal_wrapper1 .menu__nav a {
+  transition: color 0.25s linear;
+}
+.gobal_wrapper1 .menu__nav a:focus,
+.gobal_wrapper1 .menu__nav a:hover {
+  color: var(--second);
+}
+.main__wrapper {
+  position: relative;
+  top: -170px;
+  @media screen and (min-width: 1200px) {
+    top: -80px;
+  }
+}
+
+.menu {
+  position: sticky;
+  top: 0;
+  z-index: 800;
+}
+
+.menu__nav {
+  position: absolute;
+  top: 0;
+
+  display: flex;
+  height: 170px;
+  width: 100%;
+
+  background-color: rgba(217, 217, 217, 0.6);
+
+  @media screen and (min-width: 1200px) {
+    height: 80px;
+  }
+}
+
+.menu__list {
+  display: flex;
+  flex-wrap: wrap;
+
+  column-gap: 15px;
+  row-gap: 15px;
+  margin: auto 20px;
+  height: 130px;
+
+  @media screen and (min-width: 1200px) {
+    column-gap: 30px;
+
+    margin: auto 10% auto 25%;
+
+    height: 24px;
+  }
+}
+
+.menu__item {
+  flex-basis: 160px;
+
+  @media screen and (min-width: 1200px) {
+    flex-basis: auto;
+  }
+}
+
+.menu__item.a-li {
+  margin-bottom: 0;
+}
+
+.menu__text {
+  font-family: "Roboto", serif;
+  font-size: 24px;
+  line-height: 120%;
+
+  color: var(--base);
+  text-transform: uppercase;
+}
+  
+.menu__nav .menu__item a.a-body.menu__text:visited {
+  color: var(--base);
+}
+
+.assortment {
+  position: relative;
+
+  top: 170px;
+
+  @media screen and (min-width: 1200px) {
+    top: 80px;
+  }
+}
+
+.content__container {
+  padding-top: 100px;
+}
+
+.content__boundaries {
+   padding-left: 20px;
+   padding-right: 20px;
+}
+
+.video__block {
+  margin: 0 auto;
+
+  padding-top: 40px;
+  padding-bottom: 60px;
+  width: 335x;
+  height: 290px;
+
+  @media screen and (min-width: 1200px) {
+    padding-top: 50px;
+    padding-bottom: 100px;
+    width: 1040px;
+    height: 738px;
+  }
+}
+
+.gallery__wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 50px 0;
+
+  width: 335px;
+
+  @media screen and (min-width: 1200px) {
+    width: 1052px;
+  }
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  column-gap: 10px;
+  row-gap: 24px;
+
+  width: 335px;
+
+  @media screen and (min-width: 1200px) {
+    gap: 24px;
+    width: 1052px;
+  }
+}
+
+.gallery li {
+ display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+
+  flex-basis: 157px;
+
+  @media screen and (min-width: 1200px) {
+    flex-basis: 245px;
+  }
+}
+
+.gallery li img {
+  border-radius: 5px;
+}
+
+.gallery li p,
+.gallery li a {
+  font-size: 20px;
+  line-height: 130%;
+  text-align: center;
+}
+
+.gallery li a {
+  color: var(--base);
+  transition: color 0.25s linear;
+}
+
+.gallery li a:focus,
+.gallery li a:hover {
+  color: var(--menu);
+}
+
+.gallery li a img {
+  transition: transform 0.25s linear;
+}
+
+.gallery li a img:hover {
+  transform: scale(1.05);
+}
+
+.gobal_wrapper1 #benefits {
+  background-image: url("../image/catalog/b2b/background_375.jpg");
+  height: 1511px;
+
+  @media screen and (min-width: 1200px) {
+    background-image: url("../image/catalog/b2b/background_1200.jpg");
+    height: 828px;
+  }
+}
+
+#benefits .a-h2 {
+  display: block;    
+  width: 100%;
+  padding-top: 20px;
+  color: var(--menu);
+}
+
+#benefits p {
+  font-size: 14px;
+  line-height: 120%;
+  color: var(--menu);
+  text-align: center;
+}
+
+.benefits__list {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 24px;
+  row-gap: 80px;
+
+  margin: 0 auto;
+  padding-top: 60px;
+
+  width: 335px;
+
+  @media screen and (min-width: 1200px) {
+    column-gap: 50px;
+    row-gap: 60px;
+
+    width: 770px;
+  }
+}
+
+.benefits__list li {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  width: 155px;
+}
+
+.benefits__list img,
+.benefits__list .a-h4,
+.benefits__list p {
+  margin: 0 auto;
+}
+
+.text-logo__wrapper {
+  position: relative;
+  display: inline-block;
+  width: 150px;
+}
+
+.text-logo__img {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: inline-block;
+  width: 142px;
+}
+
+.gobal_wrapper1 #catalogues {
+  background-color: var(--catalogues);
+  padding-bottom: 100px;
+}
+
+.catalogues__header.a-h2 {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  width: 250px;
+
+  color: var(--base);
+  @media screen and (min-width: 1200px) {
+    width: 350px;
+  }
+}
+
+.triangle {
+  position: absolute;
+
+  top: 0%;
+  left: 65px;
+  transform: translate(-30%, -70%);
+
+  @media screen and (min-width: 1200px) {
+    left: 0;
+  }
+}
+
+.text__wrapper {
+  margin: 0 auto;
+
+  padding: 20px 10px;
+
+  @media screen and (min-width: 1200px) {
+    padding: 20px 250px;
+  }
+}
+
+.text__wrapper p {
+  font-family: "Roboto", serif;
+  padding: 20px 0;
+  font-size: 20px;
+  line-height: 130%;
+}
+
+.btn__more {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  margin: 0 auto;
+  width: 156px;
+  height: 60px;
+
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 120%;
+
+  color: var(--base);
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  border-radius: 5px;
+  background-color: var(--accent);
+}
+
+.btn__more:focus,
+.btn__more:hover {
+  color: var(--first);
+  background-color: var(--accent_hover);
+}
+
+.gobal_wrapper1 #contacts {
+  display: flex;
+  align-items: center;
+  padding: 0;
+
+  flex-direction: column-reverse;
+
+  @media screen and (min-width: 1200px) {
+    flex-direction: row;
+  }
+}
+
+form .frm, 
+form#frm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  width: 100%;
+  height: 900px;
+
+  @media screen and (min-width: 1200px) {
+    width: 698px;
+    height: 100%;
+  }
+}
+
+form .a-h2 {
+  padding-bottom: 50px;
+}
+
+form p {
+  text-align: center;
+
+  font-size: 20px;
+  line-height: 130%;
+}
+
+.form__send {
+  width: 335px;
+  align-items: center;
+
+  @media screen and (min-width: 1200px) {
+    width: 510px;
+  }
+}
+
+.a-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+
+  width: 100%;
+  height: 191px;
+  padding-left: 24px;
+
+  background-color: var(--accent);
+
+  @media screen and (min-width: 1200px) {
+    flex-direction: row;
+    align-items: center;
+    gap: 80px;
+    height: 134px;
+    padding-left: 0px;
+  }
+}
+
+.a-footer__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.a-footer__item p,
+.a-footer__item a {
+  magin: 0;
+  font-family: "Roboto", serif;
+  font-size: 14px;
+  line-height: 120%;
+  font-style: normal;
+  color: var(--base);
+}
+
+.form__wrapper {
+  margin: 0 auto;
+  padding: 40px 0;
+
+  width: 100%;
+
+  @media screen and (min-width: 1200px) {
+    width: 510px;
+  }
+}
+
+.form-block {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  @media screen and (min-width: 1200px) {
+    flex-direction: row;
+
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+
+.form-field {
+  padding: 10px 14px;
+
+  width: 100%;
+  height: 44px;
+
+  font-family: "Roboto", serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+
+  background-color: var(--fields);
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+
+  @media screen and (min-width: 1200px) {
+    width: 245px;
+  }
+}
+
+.boxshadow {
+  transition: box-shadow 0.25s linear, color 0.25s linear,
+    background-color 0.25s linear;
+}
+
+.boxshadow:focus,
+.boxshadow:hover {
+  box-shadow: var(--boxshadow);
+}
+
+.form-field--big {
+  width: 335px;
+  height: 112px;
+  resize: none;
+  margin: 0 20px;
+
+  @media screen and (min-width: 1200px) {
+    width: 510px;
+    margin: 0;
+  }
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.message {
+  margin: 0 auto;
+  width: 375px;
+  color: var(--accent);
+
+  @media screen and (min-width: 1200px) {
+    width: 500px;
+  }
+
+}
+
+.vh {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+address.a-footer__item {
+  margin-bottom: 0;
+}
+      `;
+      document.head.appendChild(style);
+    </script>
+    <div class="gobal_wrapper1">
+      <div class="hero">
+        <picture>
+          <source
+            srcset="./image/catalog/b2b/hero_1200.jpg"
+            media="(min-width: 1200px)"
+          />
+          <img
+            class="hero__img"
+            src="./image/catalog/b2b/hero_375.jpg"
+            alt="baby in whinter outerwear"
+          />
+        </picture>
+        <picture>
+          <source
+            srcset="./image/catalog/b2b/logo_1200.svg"
+            media="(min-width: 1200px)"
+          />
+          <img
+            class="hero__logo"
+            src="./image/catalog/b2b/logo_375.svg"
+            alt="logo"
+          />
+        </picture>
+      </div>
+      <div class="main__wrapper">
+        <div class="menu">
+          <div class="menu__nav">
+            <ul class="menu__list a-ul">
+              <li class="menu__item a-li">
+                <a
+                  href="https://bembi.ua/news/b2b/#assortment"
+                  class="a-body menu__text"
+                  >Assortment</a
+                >
+              </li>
+              <li class="menu__item a-li">
+                <a
+                  href="https://bembi.ua/news/b2b/#benefits"
+                  class="a-body menu__text"
+                  >Benefits</a
+                >
+              </li>
+              <li class="menu__item a-li">
+                <a
+                  href="https://bembi.ua/news/b2b/#about"
+                  class="a-body menu__text"
+                  >About us</a
+                >
+              </li>
+              <li class="menu__item a-li">
+                <a
+                  href="https://bembi.ua/news/b2b/#catalogues"
+                  class="a-body menu__text"
+                  >Catalogues</a
+                >
+              </li>
+              <li class="menu__item a-li">
+                <a
+                  href="https://bembi.ua/news/b2b/#contacts"
+                  class="a-body menu__text"
+                  >Contacts</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="assortment">
+          <div id="assortment" class="content__container content__boundaries">
+            <h2 class="a-h2">The largest assortment, constantly growing</h2>
+            <div class="gallery__wrapper">
+              <ul class="gallery a-ul">
+                <li class="a-li">
+                  <picture>
+                    <source
+                      srcset="./image/catalog/b2b/newborn_1200.jpg"
+                      media="(min-width: 1200px)"
+                    />
+                    <img
+                      class=""
+                      src="./image/catalog/b2b/newborn_375.jpg"
+                      alt=""
+                    />
+                  </picture>
+                  <p>Clothing for newborns</p>
+                </li>
+                <li class="a-li">
+                  <picture>
+                    <source
+                      srcset="./image/catalog/b2b/pajama_1200.jpg"
+                      media="(min-width: 1200px)"
+                    />
+                    <img
+                      class=""
+                      src="./image/catalog/b2b/pajama_375.jpg"
+                      alt=""
+                    />
+                  </picture>
+                  <p>Underwear and pajamas</p>
+                </li>
+                <li class="a-li">
+                  <picture>
+                    <source
+                      srcset="./image/catalog/b2b/outerwear_1200.jpg"
+                      media="(min-width: 1200px)"
+                    />
+                    <img
+                      class=""
+                      src="./image/catalog/b2b/outerwear_375.jpg"
+                      alt=""
+                    />
+                  </picture>
+                  <p>Outerwear</p>
+                </li>
+                <li class="a-li">
+                  <picture>
+                    <source
+                      srcset="./image/catalog/b2b/christening_1200.jpg"
+                      media="(min-width: 1200px)"
+                    />
+                    <img
+                      class=""
+                      src="./image/catalog/b2b/christening_375.jpg"
+                      alt=""
+                    />
+                  </picture>
+                  <p>Christening clothing</p>
+                </li>
+              </ul>
+            </div>
+            <div class="gallery__wrapper">
+              <div class="a-h3">
+                We offer seasonal, one-of-a-kind designer collections:
+              </div>
+              <ul class="gallery a-ul">
+                <li class="a-li">
+                  <picture>
+                    <source
+                      srcset="./image/catalog/b2b/spring_1200.jpg"
+                      media="(min-width: 1200px)"
+                    />
+                    <img
+                      class=""
+                      src="./image/catalog/b2b/spring_375.jpg"
+                      alt=""
+                    />
+                  </picture>
+                  <p>Spring</p>
+                </li>
+                <li class="a-li">
+                  <picture>
+                    <source
+                      srcset="./image/catalog/b2b/summer_1200.jpg"
+                      media="(min-width: 1200px)"
+                    />
+                    <img
+                      class=""
+                      src="./image/catalog/b2b/summer_375.jpg"
+                      alt=""
+                    />
+                  </picture>
+                  <p>Summer</p>
+                </li>
+                <li class="a-li">
+                  <picture>
+                    <source
+                      srcset="./image/catalog/b2b/autumn_1200.jpg"
+                      media="(min-width: 1200px)"
+                    />
+                    <img
+                      class=""
+                      src="./image/catalog/b2b/autumn_375.jpg"
+                      alt=""
+                    />
+                  </picture>
+                  <p>Autumn</p>
+                </li>
+                <li class="a-li">
+                  <picture>
+                    <source
+                      srcset="./image/catalog/b2b/winter_1200.jpg"
+                      media="(min-width: 1200px)"
+                    />
+                    <img
+                      class=""
+                      src="./image/catalog/b2b/winter_375.jpg"
+                      alt=""
+                    />
+                  </picture>
+                  <p>Winter</p>
+                </li>
+              </ul>
+            </div>
+            <div class="gallery__wrapper">
+              <div class="a-h3">
+                We also offer specialized collections for various occasions:
+                kindergarten clothing, casual schoolweat (non-uniform),
+                christening clothind and traditional ethnic-inspired outfits.
+              </div>
+              <div class="a-h3 accent">
+                You'll always find the perfect products to suit your cjildren's
+                shop!
+              </div>
+              <ul class="gallery a-ul">
+                <li class="a-li">
+                  <picture>
+                    <source
+                      srcset="./image/catalog/b2b/kindergarten_1200.jpg"
+                      media="(min-width: 1200px)"
+                    />
+                    <img
+                      class=""
+                      src="./image/catalog/b2b/kindergarten_375.jpg"
+                      alt=""
+                    />
+                  </picture>
+                  <p>Kindergarten</p>
+                </li>
+                <li class="a-li">
+                  <picture>
+                    <source
+                      srcset="./image/catalog/b2b/casual_1200.jpg"
+                      media="(min-width: 1200px)"
+                    />
+                    <img
+                      class=""
+                      src="./image/catalog/b2b/casual_375.jpg"
+                      alt=""
+                    />
+                  </picture>
+                  <p>Casual</p>
+                </li>
+                <li class="a-li">
+                  <picture>
+                    <source
+                      srcset="./image/catalog/b2b/ethno_1200.jpg"
+                      media="(min-width: 1200px)"
+                    />
+                    <img
+                      class=""
+                      src="./image/catalog/b2b/ethno_375.jpg"
+                      alt=""
+                    />
+                  </picture>
+                  <p>Ethno</p>
+                </li>
+                <li class="a-li">
+                  <picture>
+                    <source
+                      srcset="./image/catalog/b2b/school_1200.jpg"
+                      media="(min-width: 1200px)"
+                    />
+                    <img
+                      class=""
+                      src="./image/catalog/b2b/school_375.jpg"
+                      alt=""
+                    />
+                  </picture>
+                  <p>School</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div id="benefits" class="content__container content__boundaries">
+            <div class="a-h2">The benefis of working with us:</div>
+            <ul class="benefits__list a-ul">
+              <li class="a-li">
+                <img
+                  src="./image/catalog/b2b/face.svg"
+                  height="50"
+                  alt="face"
+                />
+                <div class="a-h4">Comfort</div>
+                <p>
+                  The brand prioritizes making Bembi children's clothes
+                  comfortable, practical, and fashionable.
+                </p>
+              </li>
+              <li class="a-li">
+                <img
+                  src="./image/catalog/b2b/painter.svg"
+                  height="50"
+                  alt="innovation"
+                />
+                <div class="a-h4">Innovation</div>
+                <p>
+                  Clothes are produced by modern technologies under the
+                  supervision of the best specialists.
+                </p>
+              </li>
+              <li class="a-li">
+                <img
+                  src="./image/catalog/b2b/lock.svg"
+                  height="50"
+                  alt="lock"
+                />
+                <div class="a-h4">Exclusivity</div>
+                <p>
+                  Bembi offers exclusive products that are rarely found in
+                  Europe, unavailable in other stores or mass-market chains.
+                </p>
+              </li>
+              <li class="a-li">
+                <img
+                  src="./image/catalog/b2b/order.svg"
+                  height="50"
+                  alt="order"
+                />
+                <div class="a-h4">Since 1998</div>
+                <p>We have many years of invaluable experience.</p>
+              </li>
+              <li class="a-li">
+                <img
+                  src="./image/catalog/b2b/check.svg"
+                  height="50"
+                  alt="sertificate fabrics"
+                />
+                <div class="a-h4">Certified fabrics</div>
+                <p>Are used according to the Standart 100 by Oeko-Tex.</p>
+              </li>
+              <li class="a-li">
+                <img
+                  src="./image/catalog/b2b/children.svg"
+                  height="50"
+                  alt="child"
+                />
+                <div class="a-h4">Wide size range</div>
+                <p>
+                  A wide size range of clothing for all ages - from infants and
+                  young children to teenagers.
+                </p>
+              </li>
+              <li class="a-li">
+                <img
+                  src="./image/catalog/b2b/stars.svg"
+                  height="50"
+                  alt="5 stars"
+                />
+                <div class="a-h4">High-class disigners</div>
+                <p>
+                  Monitor the global fashion market and create collections based
+                  on current trends.
+                </p>
+              </li>
+              <li class="a-li">
+                <img
+                  src="./image/catalog/b2b/hands.svg"
+                  height="50"
+                  alt="handshake"
+                />
+                <div class="a-h4">Easy ordering</div>
+                <p>
+                  With children's world, no contract is required— order goods
+                  flexibly, whenever you need them.
+                </p>
+              </li>
+            </ul>
+          </div>
+          <div id="about" class="content__container content__boundaries">
+            <div class="a-h2">
+              The
+              <span class="text-logo__wrapper">
+                <picture>
+                  <source
+                    srcset="./image/catalog/b2b/logo_1200.svg"
+                    media="(min-width: 1200px)"
+                  />
+                  <img
+                    class="text-logo__img"
+                    src="./image/catalog/b2b/logo_375.svg"
+                    alt="logo"
+                  />
+                </picture>
+              </span>
+              brand: a proud
+            </div>
+            <div class="a-h2">
+              legacy <span class="accent">since 1998</span>
+            </div>
+            <div class="text__wrapper">
+              <p>
+                Today, Bembi stands as Ukraine's largest brand of children's
+                clothing, specializing in apparel for children aged 0 to 13
+                years. The brand proudly represents Ukrainian-made quality,
+                embodying the motto: “Bembi - Care For Kids.”
+              </p>
+              <p>
+                Rooted in values of responsibility, honesty, and a relentless
+                pursuit of growth and innovation, Bembi fosters strong, positive
+                relationships with its partners, consumers, and employees.
+              </p>
+              <p>
+                With a network of 30 branded stores and a regional distribution
+                network of 700 sales points across Ukraine, Bembi continues to
+                expand its reach. The brand is constantly evolving, exploring
+                new markets, and staying ahead of global trends in children's
+                fashion. In 2015, Bembi established a representative office in
+                Europe—Children's World, located in Warsaw, Poland.
+              </p>
+              <p>
+                Today, Children's World Sp. z o.o. is the exclusive distributor
+                representing Bembi across the Polish and European markets. The
+                company has established a strong customer base in numerous
+                countries, including
+                <span class="accent"
+                  >Poland, Czech Republic, Slovenia, Estonia, Latvia, Lithuania,
+                  Hungary, Romania, UK, Belgium, Germany, Switzerland, France,
+                  Sweden, Austria, and the Netherlands</span
+                >.
+              </p>
+            </div>
+          </div>
+          <div id="video1" class="content__boundaries video__block">
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/yJDNEnGNLw4"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            >
+            </iframe>
+          </div>
+          <div id="catalogues" class="content__container content__boundaries">
+            <div class="a-h2 catalogues__header">
+              Our catalogues
+              <img
+                class="triangle"
+                src="./image/catalog/b2b/triangle.svg"
+                alt="tiangle"
+              />
+            </div>
+            <div class="gallery__wrapper">
+              <ul class="gallery a-ul">
+                <li class="a-li">
+                  <a href="https://bembi.ua/katalog-60/underwear_2025/">
+                    <picture>
+                      <source
+                        srcset="./image/catalog/b2b/c_acort_1200.jpg"
+                        media="(min-width: 1200px)"
+                      />
+                      <img
+                        class=""
+                        src="./image/catalog/b2b/c_acort_375.jpg"
+                        alt="front page of the catalogue underwear"
+                      />
+                    </picture>
+                  </a>
+                  <a
+                    href="https://bembi.ua/image/catalog/pdf/underwear_2025.pdf"
+                    download="underw_2025.pdf"
+                    class="a-body"
+                    >download</a
+                  >
+                </li>
+                <li class="a-li">
+                  <a
+                    href="https://bembi.ua/katalog-60/autumn_collection_clothing_2024/"
+                  >
+                    <picture>
+                      <source
+                        srcset="./image/catalog/b2b/c_autumn_1200.jpg"
+                        media="(min-width: 1200px)"
+                      />
+                      <img
+                        class=""
+                        src="./image/catalog/b2b/c_autumn_375.jpg"
+                        alt="front page of the catalogue autumn"
+                      />
+                    </picture>
+                  </a>
+                  <a
+                    href="https://bembi.ua/image/catalog/Autumn_2024/Autumn_2024.pdf"
+                    download="Autumn_2024.pdf"
+                    class="a-body"
+                    >download</a
+                  >
+                </li>
+                <li class="a-li">
+                  <a href="https://bembi.ua/katalog-60/winter_2024-2025/">
+                    <picture>
+                      <source
+                        srcset="./image/catalog/b2b/c_winter_1200.jpg"
+                        media="(min-width: 1200px)"
+                      />
+                      <img
+                        class=""
+                        src="./image/catalog/b2b/c_winter_375.jpg"
+                        alt="front page of the catalogue winter"
+                      />
+                    </picture>
+                  </a>
+                  <a
+                    href="https://bembi.ua/image/catalog/winter_2024-2025/winter_2024-2025.pdf"
+                    download="winter_2024-2025.pdf"
+                    class="a-body"
+                    >download</a
+                  >
+                </li>
+                <li class="a-li">
+                  <a href="https://bembi.ua/katalog-60/newborn-2024-100/">
+                    <picture>
+                      <source
+                        srcset="./image/catalog/b2b/c_newborn_1200.jpg"
+                        media="(min-width: 1200px)"
+                      />
+                      <img
+                        class=""
+                        src="./image/catalog/b2b/c_newborn_375.jpg"
+                        alt="front page of the catalogue newborn"
+                      />
+                    </picture>
+                  </a>
+                  <a
+                    href="https://bembi.ua/image/catalog/Newborn_2024/Newborn_2024.pdf"
+                    class="a-body"
+                    download="Newborn_2024.pdf"
+                    >download</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <a href="https://bembi.ua/katalog-60/" class="btn__more boxshadow"
+              >More</a
+            >
+          </div>
+          <div id="contacts" class="">
+            <form id="frm">
+              <div class="frm">
+                <h2 class="a-h2">You have some questions?</h2>
+                <p>Our manager will contact you!</p>
+                <p>Please, leave your contact details:</p>
+                <div class="form__wrapper">
+                  <div class="form-block">
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      required
+                      placeholder="Name"
+                      class="form-field boxshadow"
+                    />
+                    <input
+                      type="text"
+                      id="country"
+                      name="country"
+                      placeholder="Country"
+                      class="form-field boxshadow"
+                    />
+                  </div>
+                  <div class="form-block">
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                      placeholder="E-mail"
+                      class="form-field boxshadow"
+                    />
+                    <input
+                      type="text"
+                      id="phoneNumber"
+                      name="phoneNumber"
+                      required
+                      placeholder="Phone number"
+                      class="form-field boxshadow"
+                    />
+                  </div>
+                  <textarea
+                    type="text"
+                    id="notes"
+                    name="notes"
+                    placeholder="Your questions..."
+                    class="form-field form-field--big boxshadow"
+                  ></textarea>
+                </div>
+                <button type="submit" class="btn__more form__send boxshadow">
+                  Send
+                </button>
+              </div>
+              <div class="message vh">
+                <h2 class="a-h2">Your message</h2>
+                <h2 class="a-h2">has been sent</h2>
+                <h2 class="a-h2">to the manager</h2>
+              </div>
+            </form>
+            <picture>
+              <source
+                srcset="./image/catalog/b2b/ui_1200.jpg"
+                media="(min-width: 1200px)"
+              />
+              <img
+                class="hero__img"
+                src="./image/catalog/b2b/ui_375.jpg"
+                alt="children on the sand"
+              />
+            </picture>
+          </div>
+          <div class="a-footer">
+            <address class="a-footer__item">
+              <img src="./image/catalog/b2b/point.svg" alt="" />
+              <p class="footer__p">
+                ul. Połczyńska 75, 01-336, Warszawa, Poland
+              </p>
+            </address>
+            <div class="a-footer__item">
+              <img src="./image/catalog/b2b/mail.svg" alt="" />
+              <p class="footer__p">bok@bembi.pl</p>
+            </div>
+            <div class="a-footer__item">
+              <img src="./image/catalog/b2b/phone.svg" alt="" />
+              <ul class="a-ul">
+                <li class="a-li">
+                  <a class="a-footer__phone" href="tel:+48533304797"
+                    >+48 533 304 797</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      document
+        .getElementById("frm")
+        .addEventListener("submit", async function (event) {
+          event.preventDefault();
+
+          const form = event.target;
+          const formData = new FormData(form);
+          const data = Object.fromEntries(formData.entries());
+          try {
+            const response = await fetch(
+              "https://retail-bonus-backend.onrender.com/promo",
+              {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+              }
+            );
+
+            if (!response.ok) {
+              throw new Error(`Error: ${response.statusText}`);
+            }
+
+            const eMessage = document.querySelector(".message");
+            if (eMessage) {
+              console.log("test");
+              eMessage.classList.remove("vh");
+            }
+
+            const eForm = document.querySelector(".frm");
+            if (eForm) {
+              eForm.classList.add("vh");
+            }
+
+            // const result = await response.json();
+            // document.getElementById(
+            //   "response"
+            // ).textContent = `Success: ${JSON.stringify(result)}`;
+          } catch (error) {
+            // document.getElementById(
+            //   "response"
+            // ).textContent = `Error: ${error.message}`;
+          }
+        });
+    </script>
+  </body>
+</html>
